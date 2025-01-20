@@ -56,5 +56,5 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "Mr Blocks.sln"
+    "dotnet.defaultSolution": "Mr.-Blocks.sln"
 }
