@@ -1,18 +1,25 @@
+using System;
 using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    private float horizontalInput, verticalInput;
-    public float speed = 5.0f;
+    private Rigidbody2D rb;
 
-    void Start()
+    private float horizontalInput, verticalInput;
+    public float speed;
+
+    private void Start()
     {
-        
+        rb = GetComponent<Rigidbody2D>();
     }
 
     void Update()
     {
         getInput();
+    }
+
+    private void FixedUpdate()
+    {
         MovePlayer();
     }
 
@@ -20,14 +27,37 @@ public class Player : MonoBehaviour
     {
         horizontalInput = Input.GetAxisRaw("Horizontal");
         verticalInput = Input.GetAxisRaw("Vertical");
-
-        Debug.Log($"Horizontal: {horizontalInput}, Vertical: {verticalInput}");
     }
 
     private void MovePlayer()
     {
-        Vector3 moveDirection = new Vector3(horizontalInput, verticalInput, 0);
-        Vector3 moveDelta = moveDirection.normalized * speed * Time.deltaTime;
-        transform.position += moveDelta;
+        Vector2 newVelocity = new Vector2(horizontalInput, verticalInput).normalized * speed;
+        rb.velocity = newVelocity;
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Obstacle"))
+        {
+            PlayerDied();
+        }
+    }
+
+    private void PlayerDied()
+    {
+        Destroy(gameObject);
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("Finish"))
+        {
+            LevelComplete();
+        }
+    }
+
+    private void LevelComplete()
+    {
+        Debug.Log("Level Completed!!");
     }
 }
