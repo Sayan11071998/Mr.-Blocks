@@ -4,6 +4,7 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     private Rigidbody2D rb;
+    public LevelManager levelManager;
 
     private float horizontalInput, verticalInput;
     public float speed;
@@ -45,6 +46,7 @@ public class Player : MonoBehaviour
 
     private void PlayerDied()
     {
+        levelManager.onPlayerDeath();
         Destroy(gameObject);
     }
 
@@ -58,6 +60,7 @@ public class Player : MonoBehaviour
 
     private void LevelComplete()
     {
-        Debug.Log("Level Completed!!");
+        levelManager.OnLevelComplete();
+        gameObject.SetActive(false);
     }
 }
