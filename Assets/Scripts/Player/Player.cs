@@ -9,20 +9,10 @@ public class Player : MonoBehaviour
     private float horizontalInput, verticalInput;
     public float speed;
 
-    private void Start()
-    {
-        rb = GetComponent<Rigidbody2D>();
-    }
+    private void Start() => rb = GetComponent<Rigidbody2D>();
+    void Update() => getInput();
 
-    void Update()
-    {
-        getInput();
-    }
-
-    private void FixedUpdate()
-    {
-        MovePlayer();
-    }
+    private void FixedUpdate() => MovePlayer();
 
     private void getInput()
     {
@@ -39,9 +29,7 @@ public class Player : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Obstacle"))
-        {
             PlayerDied();
-        }
     }
 
     private void PlayerDied()
@@ -53,9 +41,7 @@ public class Player : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.CompareTag("Finish"))
-        {
             LevelComplete();
-        }
     }
 
     private void LevelComplete()

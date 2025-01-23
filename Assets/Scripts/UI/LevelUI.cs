@@ -7,18 +7,9 @@ public class LevelUI : MonoBehaviour
     public TextMeshProUGUI levelText;
     public int levelNumber = 1;
 
-    private void Start()
-    {
-        UpdateLevelText();
-    }
+    private void Start() => UpdateLevelText();
 
-    private void UpdateLevelText()
-    {
-        levelText.text = "Level: " + levelNumber;
-    }
+    private void UpdateLevelText() => levelText.text = "Level: " + levelNumber;
 
-    private void HideLevelPanel()
-    {
-        levelPanel.SetActive(false);
-    }
+    private void HideLevelPanel() => levelPanel.SetActive(false);
 }

@@ -1,5 +1,3 @@
-using System;
-using System.Net.Http.Headers;
 using UnityEngine;
 
 public class SpikeBall_Scaling : MonoBehaviour
@@ -27,19 +25,12 @@ public class SpikeBall_Scaling : MonoBehaviour
         RotateSpikeBall();
         
         if (isWaiting)
-        {
             HandleWaiting();
-        }
         else
-        {
             ScaleSpikeBall();
-        }
     }
 
-    private void RotateSpikeBall()
-    {
-        transform.Rotate(Vector3.forward, rotationAngle * Time.deltaTime);
-    }
+    private void RotateSpikeBall() => transform.Rotate(Vector3.forward, rotationAngle * Time.deltaTime);
 
     private void HandleWaiting()
     {
@@ -66,8 +57,5 @@ public class SpikeBall_Scaling : MonoBehaviour
         ApplyCurrentScale();
     }
 
-    private void ApplyCurrentScale()
-    {
-        transform.localScale = new Vector3(currentScale, currentScale, 1);
-    }
+    private void ApplyCurrentScale() => transform.localScale = new Vector3(currentScale, currentScale, 1);
 }

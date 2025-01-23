@@ -9,10 +9,7 @@ public class SpikeBall_Patrolling : MonoBehaviour
     public Vector3 pointB;
     private Vector3 targetPoint;
 
-    void Start()
-    {
-        SetPatrolPoints();
-    }
+    void Start() => SetPatrolPoints();
 
     void Update()
     {
@@ -26,18 +23,13 @@ public class SpikeBall_Patrolling : MonoBehaviour
         targetPoint = pointB;
     }
 
-    private void RotateSpikeBall()
-    {
-        transform.Rotate(Vector3.forward, rotationAngle * Time.deltaTime);
-    }
+    private void RotateSpikeBall() => transform.Rotate(Vector3.forward, rotationAngle * Time.deltaTime);
 
     private void PatrolSpikeBall()
     {
         transform.position = Vector3.MoveTowards(transform.position, targetPoint, patrolSpeed * Time.deltaTime);
 
         if (transform.position == targetPoint)
-        {
             targetPoint = (targetPoint == pointA) ? pointB : pointA;
-        }
     }
 }
