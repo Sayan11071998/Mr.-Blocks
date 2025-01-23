@@ -187,6 +187,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3745607098861641714, guid: 1d15a0b010da38c4cb9c8bec40d73056, type: 3}
+      propertyPath: m_Color.b
+      value: 0.25433248
+      objectReference: {fileID: 0}
+    - target: {fileID: 3745607098861641714, guid: 1d15a0b010da38c4cb9c8bec40d73056, type: 3}
+      propertyPath: m_Color.g
+      value: 0.25433248
+      objectReference: {fileID: 0}
+    - target: {fileID: 3745607098861641714, guid: 1d15a0b010da38c4cb9c8bec40d73056, type: 3}
+      propertyPath: m_Color.r
+      value: 0.9169811
+      objectReference: {fileID: 0}
     - target: {fileID: 5072909671825854373, guid: 1d15a0b010da38c4cb9c8bec40d73056, type: 3}
       propertyPath: m_Name
       value: Player
