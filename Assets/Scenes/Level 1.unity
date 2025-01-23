@@ -562,6 +562,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: db78e9b27f8ddc64bbd42094170dec16, type: 3}
+--- !u!114 &2034656938 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1883407747888125464, guid: aebcb6264773efa41b6ea5b522aecade, type: 3}
+  m_PrefabInstance: {fileID: 8522345830231296341}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c688f85daafd74419d45fbcddd3355c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &5012132840716937395
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -858,6 +869,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1196563687911827247, guid: ee52f888c384fe04ab3c0af3f6ae4a5f, type: 3}
+      propertyPath: levelUI
+      value: 
+      objectReference: {fileID: 2034656938}
     - target: {fileID: 2344544429894805239, guid: ee52f888c384fe04ab3c0af3f6ae4a5f, type: 3}
       propertyPath: m_Name
       value: LevelManager
