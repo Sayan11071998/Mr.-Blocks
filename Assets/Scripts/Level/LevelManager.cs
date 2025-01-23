@@ -1,7 +1,5 @@
 using UnityEngine;
-using TMPro;
 using UnityEngine.SceneManagement;
-using UnityEngine.Serialization;
 
 public class LevelManager : MonoBehaviour
 {

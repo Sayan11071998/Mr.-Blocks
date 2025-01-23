@@ -12,7 +12,11 @@ public class LevelUI : MonoBehaviour
     public Button menuButton;
     public LevelManager levelManager;
 
+    private SoundManager soundManager;
+
     public int levelNumber = 1;
+
+    private void Awake() => soundManager = FindObjectOfType<SoundManager>();
 
     private void Start()
     {
@@ -32,9 +36,18 @@ public class LevelUI : MonoBehaviour
         restartButton.onClick.AddListener(RestartButton);
     }
 
-    private void MainMenuButton() => levelManager.LoadMainMenu();
+    private void MainMenuButton()
+    {
+        soundManager.PlayButtonClickAudio();
+        soundManager.DestroySoundManager();
+        levelManager.LoadMainMenu();
+    }
 
-    private void RestartButton() => levelManager.RestartLevel();
+    private void RestartButton()
+    {
+        soundManager.PlayButtonClickAudio();
+        levelManager.RestartLevel();
+    }
 
     public void ShowGameWinUI()
     {

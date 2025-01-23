@@ -7,9 +7,15 @@ public class MainMenuUI : MonoBehaviour
     public Button playButton;
     public Button quitButton;
 
+    private SoundManager soundManager;
+
     private const int firstLevel = 1;
 
-    private void Awake() => AddListerers();
+    private void Awake()
+    {
+        AddListerers();
+        soundManager = FindObjectOfType<SoundManager>();
+    }
 
     private void AddListerers()
     {
@@ -17,10 +23,16 @@ public class MainMenuUI : MonoBehaviour
         quitButton.onClick.AddListener(Quit);
     }
 
-    public void Play() => SceneManager.LoadScene(firstLevel);
+    public void Play()
+    {
+        soundManager.PlayButtonClickAudio();
+        SceneManager.LoadScene(firstLevel);
+    }
 
     public void Quit()
     {
+        soundManager.PlayButtonClickAudio();
+        
         #if UNITY_EDITOR
             UnityEditor.EditorApplication.isPlaying = false;
         #else
