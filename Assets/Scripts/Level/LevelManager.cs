@@ -1,9 +1,14 @@
 using UnityEngine;
+using TMPro;
 using UnityEngine.SceneManagement;
+using UnityEngine.Serialization;
 
 public class LevelManager : MonoBehaviour
 {
+    public LevelUI levelUI;
+
     private int currentSceneIndex;
+    private const int mainMenuIndex = 0;
 
     private void Start() => currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
 
@@ -17,10 +22,12 @@ public class LevelManager : MonoBehaviour
         if (nextSceneIndex < totalNumberOfScenes)
             SceneManager.LoadScene(nextSceneIndex);
         else
-            Debug.Log("You have completed all levels!!");
+            levelUI.ShowGameWinUI();
     }
 
-    public void onPlayerDeath() => RestartLevel();
+    public void onPlayerDeath() => levelUI.ShowGameLoseUI();
 
     public void RestartLevel() => SceneManager.LoadScene(currentSceneIndex);
+
+    public void LoadMainMenu() => SceneManager.LoadScene(mainMenuIndex);
 }
