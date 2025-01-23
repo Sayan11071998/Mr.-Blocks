@@ -14,7 +14,11 @@ public class LevelUI : MonoBehaviour
 
     public int levelNumber = 1;
 
-    private void Start() => UpdateLevelText();
+    private void Start()
+    {
+        UpdateLevelText();
+        AddListerers();
+    }
 
     private void UpdateLevelText() => levelText.text = "Level: " + levelNumber;
 

@@ -149,11 +149,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2742293635556762826, guid: 1d15a0b010da38c4cb9c8bec40d73056, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 4.58
+      value: -7.798
       objectReference: {fileID: 0}
     - target: {fileID: 2742293635556762826, guid: 1d15a0b010da38c4cb9c8bec40d73056, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.88
+      value: 3.901
       objectReference: {fileID: 0}
     - target: {fileID: 2742293635556762826, guid: 1d15a0b010da38c4cb9c8bec40d73056, type: 3}
       propertyPath: m_LocalPosition.z
@@ -646,6 +646,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 924670505949298976, guid: aebcb6264773efa41b6ea5b522aecade, type: 3}
+      propertyPath: m_margin.x
+      value: -413.0058
+      objectReference: {fileID: 0}
+    - target: {fileID: 924670505949298976, guid: aebcb6264773efa41b6ea5b522aecade, type: 3}
+      propertyPath: m_margin.z
+      value: -409.2019
+      objectReference: {fileID: 0}
     - target: {fileID: 1199533439166007150, guid: aebcb6264773efa41b6ea5b522aecade, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -726,6 +734,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1433147584788357093, guid: aebcb6264773efa41b6ea5b522aecade, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1883407747888125464, guid: aebcb6264773efa41b6ea5b522aecade, type: 3}
       propertyPath: menuButton
       value: 
@@ -753,6 +765,10 @@ PrefabInstance:
     - target: {fileID: 5828022368561138416, guid: aebcb6264773efa41b6ea5b522aecade, type: 3}
       propertyPath: m_Name
       value: Canvas_Level
+      objectReference: {fileID: 0}
+    - target: {fileID: 6968574418385815650, guid: aebcb6264773efa41b6ea5b522aecade, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
