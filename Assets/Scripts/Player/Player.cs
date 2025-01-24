@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class Player : MonoBehaviour
@@ -5,6 +6,7 @@ public class Player : MonoBehaviour
     private Rigidbody2D rb;
     private SoundManager soundManager;
     public LevelManager levelManager;
+    public CameraShake cameraShake;
 
     private float horizontalInput, verticalInput;
     public float speed;
@@ -13,6 +15,7 @@ public class Player : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         soundManager = FindObjectOfType<SoundManager>();
+        cameraShake = FindObjectOfType<CameraShake>();
 
         if (soundManager == null)
             Debug.Log("SoundManager not found in the Scene");
@@ -37,7 +40,13 @@ public class Player : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Obstacle"))
-            PlayerDied();
+            StartCoroutine(PlayerDeathSequence());
+    }
+
+    private IEnumerator PlayerDeathSequence()
+    {
+        yield return cameraShake.Shake(0.5f, 0.3f);
+        PlayerDied();
     }
 
     private void PlayerDied()
