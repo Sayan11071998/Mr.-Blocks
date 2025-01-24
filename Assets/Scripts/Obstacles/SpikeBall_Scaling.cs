@@ -22,6 +22,8 @@ public class SpikeBall_Scaling : MonoBehaviour
 
     void Update()
     {
+        if (GameManager.isPlayerDead == true) return;
+
         RotateSpikeBall();
         
         if (isWaiting)

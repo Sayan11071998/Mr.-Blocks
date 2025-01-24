@@ -23,9 +23,17 @@ public class LevelManager : MonoBehaviour
             levelUI.ShowGameWinUI();
     }
 
-    public void onPlayerDeath() => levelUI.ShowGameLoseUI();
+    public void onPlayerDeath()
+    {
+        GameManager.isPlayerDead = true;
+        levelUI.ShowGameLoseUI();
+    }
 
-    public void RestartLevel() => SceneManager.LoadScene(currentSceneIndex);
+    public void RestartLevel()
+    {
+        GameManager.ResetGameState();
+        SceneManager.LoadScene(currentSceneIndex);
+    }
 
     public void LoadMainMenu() => SceneManager.LoadScene(mainMenuIndex);
 }

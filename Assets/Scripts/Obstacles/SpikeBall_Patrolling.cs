@@ -13,6 +13,8 @@ public class SpikeBall_Patrolling : MonoBehaviour
 
     void Update()
     {
+        if (GameManager.isPlayerDead == true) return;
+        
         RotateSpikeBall();
         PatrolSpikeBall();
     }
